@@ -36,7 +36,7 @@ def requester():
             new_identity()
             req = requests.post("https://services.avaapiweb.com/api/RegistrationValidation/InputValidator", json=data, headers=headers, proxies=proxies)
             if '"Status":2,' in req.text:
-                with open("good.txt", "a") as a:
+                with open("inuse.txt", "a") as a:
                     a.writelines(line+"\n")
                     a.close()
             print(req.text)
